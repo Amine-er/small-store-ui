@@ -1,11 +1,15 @@
-import { Button } from '@/components/ui/button';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginForm from './components/login/LoginForm';
+import HomePage from './components/home/HomePage';
 
 function App() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gray-50">
-      <h1 className="text-3xl font-bold mb-4">Welcome to E-Commerce UI</h1>
-      <Button>Login</Button>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 
